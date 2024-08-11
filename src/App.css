@@ -1,38 +1,73 @@
-.App {
+
+.app-heading {
   text-align: center;
+  width: 100%;
+  margin: 20px 0px;
+}
+.header-div {
+  border-bottom: 1px solid #ccc;
+}
+.app {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.customer-list {
+  grid-column: span 3; 
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+ }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.customer-details {
+  grid-column: span 9;
+  padding: 20px;
+  overflow-y: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+ 
 }
 
-.App-link {
-  color: #61dafb;
+
+.customer-list::-webkit-scrollbar {
+  width: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.customer-list::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+.customer-list::-webkit-scrollbar-thumb {
+  background: #000; 
+  border-radius: 10px; 
+}
+
+.customer-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.customer-card {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.customer-card.selected {
+  background-color: #f0f0f0;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  width: 100%;
+  margin-top: 2rem;
+  height: fit-content;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
